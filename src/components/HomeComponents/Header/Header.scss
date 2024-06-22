@@ -1,0 +1,103 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//   @include MyFlex();
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
+
+header {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    @include MyFlex();
+    align-items: start;
+
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .textBox {
+        position: absolute;
+
+        p {
+            font-size: 230px;
+            margin-top: 240px;
+            // font-family: 'Mansalva', sans-serif;
+            // font-family: 'Space Grotesk', sans-serif;
+            font-family: roboto;
+            color: var(--bg-color-1);
+            letter-spacing: 10px;
+            // vertical-align: baseline;
+            // text-decoration: none solid transparent;
+            // color: transparent;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+        }
+    }
+
+    .leftTextBox {
+        position: absolute;
+        bottom: 130px;
+        left: 70px;
+
+        img {
+            max-width: 70%;
+        }
+
+    }
+
+    .rightTextBox {
+        position: absolute;
+        top: 140px;
+        right: 50px;
+        display: flex;
+        justify-content: end;
+
+        img {
+            max-width: 70%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1115px) {
+    header {
+        .textBox {
+            p {
+                letter-spacing: 0px;
+            }
+        }
+
+        .leftTextBox {
+            bottom: 100px;
+            left: 50px;
+
+            img {
+                max-width: 90%;
+            }
+        }
+
+        .rightTextBox {
+            img {
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 918px) {
+    header {
+        .textBox {
+            p {
+                font-size: 100px;
+                margin-top: 250px;
+                -webkit-text-stroke-width: 4px;
+
+            }
+        }
+    }
+}

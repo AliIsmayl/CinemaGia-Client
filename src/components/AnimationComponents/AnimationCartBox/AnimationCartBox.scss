@@ -1,0 +1,380 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//   @include MyFlex();
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
+#animationCartBox {
+    font-family: 'Space Grotesk', sans-serif;
+
+    background: var(--mode-color-1);
+
+    input::placeholder {
+        font-family: 'Space Grotesk', sans-serif;
+
+    }
+
+    .upBox {
+        background: var(--mode-color-1);
+        @include MyFlex();
+        justify-content: space-between;
+        padding: 30px 90px;
+        z-index: 2;
+
+        .searchAndFilterBox {
+            display: flex;
+            gap: 10px;
+
+            .filterBox {
+                background: var(--bg-color-1);
+                height: 40px;
+                width: 40px;
+                @include MyFlex();
+                border-radius: 5px;
+                font-size: 20px;
+                cursor: pointer;
+                color: var(--mode-color-1);
+                color: var(--mode-color-2);
+
+            }
+
+            .searchBox {
+                background: var(--mode-color-2);
+                height: 40px;
+                width: 220px;
+                @include MyFlex();
+                border-radius: 5px;
+                gap: 2px;
+                font-size: 25px;
+                color: var(--mode-color-1);
+
+                input {
+                    height: 100%;
+                    border-radius: 7px;
+                    border: none;
+                    padding: 0px 0px 0px 10px;
+                    outline: none;
+                    background: transparent;
+                    color: var(--mode-color-1);
+                }
+
+            }
+        }
+
+        .menuBox {
+            height: 40px;
+            width: 100px;
+            display: flex;
+            justify-content: end;
+
+            .twoBoxMenu {
+                background: var(--bg-color-1);
+                height: 100%;
+                width: 40%;
+                @include MyFlex();
+                border-radius: 5px;
+                font-size: 15px;
+                cursor: pointer;
+                color: var(--mode-color-1);
+                font-size: 12px;
+color: var(--mode-color-2);
+
+            }
+
+        }
+    }
+
+    .middleBox {
+        background: var(--mode-color-1);
+        background: transparent;
+        padding: 0px 90px;
+        height: 0px;
+        z-index: 1;
+        transition: 0.7s;
+        overflow: hidden;
+        .filterTextBox {
+            width: 270px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            form {
+                display: flex;
+                gap: 10px;
+                font-size: 15px;
+                
+            }
+
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            label {
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 15px;
+                    width: 15px;
+                    border: 2px solid var(--mode-color-2);
+                    border-radius: 3px;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+            }
+
+
+
+            input[type="checkbox"]:checked+label:after {
+                display: block; // Check işaretini gösterme
+                left: 6px;
+                font-family: 'Space Grotesk', sans-serif;
+                top: 2px;
+                width: 4px;
+                height: 9px;
+                border: solid var(--mode-color-2);
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                
+            }
+
+            .filmTypeBox {
+                background: var(--bg-color-1);
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 20px;
+                border-radius: 7px;
+                color: var(--mode-color-2);
+
+                input[type="checkbox"]:checked+label:before {
+                    background-color: transparent;
+                }
+            }
+        }
+
+    }
+
+    .downBox {
+        background: var(--mode-color-1);
+        padding: 30px 10px;
+        @include MyFlex();
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px 50px;
+        .flipContainer {
+            height: 420px;
+            perspective: 800px;
+            @include MyFlex();
+            width: 300px;
+
+            .card {
+                height: 100%;
+                width: 100%;
+                position: relative;
+                transition: transform 700ms;
+                transform-style: preserve-3d;
+                width: 300px;
+                @include MyFlex();
+
+                .frontSide,
+                .backSide {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 7px;
+                    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+                    position: absolute;
+                    backface-visibility: hidden;
+                }
+
+                .frontSide {
+                    @include MyFlex();
+                    border-radius: 10px;
+                    // position: relative;
+                    width: 280px;
+
+                    img {
+                        border-radius: 8px;
+
+                    }
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        aspect-ratio: 1 / 1.5;
+                    }
+
+                    .changeBox {
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        font-size: 30px;
+                        color: var(--bg-color-1);
+                        @include MyFlex();
+                        border-radius: 50%;
+                        background: white;
+                    }
+                }
+
+                .backSide {
+                    background: teal;
+                    transform: rotateY(180deg);
+                    @include MyFlex();
+                    flex-direction: column;
+                    gap: 5rem;
+                    background: var(--mode-color-2);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 90%;
+
+                    padding: 20px;
+                    height: 420px;
+                    flex-direction: column;
+                    display: flex;
+                    gap: 10px;
+                    position: relative;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    .text {
+                        z-index: 2;
+
+                    }
+
+                    .frontBox {
+                        background: var(--mode-color-2);
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity: 0.3;
+                        z-index: 1;
+                    }
+
+                    .playBtn {
+                        background: var(--bg-color-1);
+                        @include MyFlex();
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 50%;
+                        position: absolute;
+                        bottom: 30px;
+                        right: 30px;
+                        color: var(--mode-color-2);
+                        cursor: pointer;
+                    }
+
+                    .playlistBox {
+                        cursor: pointer;
+                        font-size: 30px;
+                        width: 30px;
+
+                        &:hover {
+                            color: var(--bg-color-1);
+                        }
+                    }
+
+                    color: var(--mode-color-1);
+
+                    h1 {
+                        font-size: 50px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        color: var(--bg-color-1);
+                    }
+
+                    .textSmall {
+                        font-size: 30px;
+
+                    }
+
+                    span {
+                        font-size: 20px;
+                        text-overflow: ellipsis;
+
+                        white-space: nowrap;
+                    }
+
+                    h2 {
+                        font-size: 18px;
+                        display: flex;
+                        gap: 5px;
+
+                        p {
+                            color: var(--bg-color-1);
+                            font-size: 20px;
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+
+                        span {
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .card {
+                    cursor: pointer;
+                    transform: rotateY(180deg);
+
+                }
+            }
+        }
+
+    }
+
+    .twoGrid {
+        gap: 30px 0px;
+    }
+
+    .changeSwiper {
+        width: 200px !important;
+        height: 300px !important;
+    }
+
+    .open {
+        transition: 0.7s;
+        height: 400px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1020px) {
+    #animationCartBox {
+        .upBox {
+            @include MyFlex();
+
+            .menuBox {
+                display: none;
+            }
+        }
+
+        .middleBox {
+            padding: 0px;
+            @include MyFlex();
+
+        }
+    }
+}

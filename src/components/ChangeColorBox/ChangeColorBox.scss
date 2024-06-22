@@ -1,0 +1,65 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//   @include MyFlex();
+.changeColorBox {
+    // background-color: #363535;
+    position: absolute;
+    left: 0;
+    top: 70%;
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    transition: 0.7s;
+    transform: translate(-115px);
+
+    .opcenChangeBox {
+        background-color: var(--mode-color-4);
+        border-radius: 10px;
+        padding: 10px 10px 10px 10px;
+        display: flex;
+        gap: 10px;
+
+        .radioBtn {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            .clickedBox {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                display: none;
+                font-size: 35px
+            }
+
+            .purple,
+            .orange,
+            .blue {
+                @include MyFlex();
+                color: var(--mode-color-1);
+            }
+        }
+    }
+
+    .clickBox {
+        background-color: var(--bg-color-1);
+        border-radius: 10px;
+        width: 50px;
+        @include MyFlex();
+        cursor: pointer;
+        color: var(--mode-color-1);
+        font-size: 25px;
+        border: 2px solid var(--mode-color-1);
+    }
+
+}
+
+.openChangeBox {
+    transform: translate(0px);
+    transition: 0.7s;
+}
