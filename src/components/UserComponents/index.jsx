@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { useContext } from 'react';
-import { userContext } from '../../../../client/src/context/UserContext';
 import toast, { Toaster } from 'react-hot-toast';
+import { userContext } from '../../context/UserContext';
 
 function UserComponents() {
     const [users, setUser] = useState([])
