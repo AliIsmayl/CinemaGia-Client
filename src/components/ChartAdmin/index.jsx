@@ -24,11 +24,11 @@ function ChartAdmin() {
     const [notselectpriceCount, setnotselectpriceCount] = useState(0);
 
     async function dataUser() {
-        const res = await axios.get("http://localhost:3000/users")
+        const res = await axios.get("https://cinemagia-server.onrender.com/users")
         setuserCount(res.data)
     }
     async function dataMovie() {
-        const res = await axios.get("http://localhost:3000/moviecart")
+        const res = await axios.get("https://cinemagia-server.onrender.com/moviecart")
         setmovieCount(res.data)
     }
 

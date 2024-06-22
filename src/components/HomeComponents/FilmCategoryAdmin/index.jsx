@@ -56,7 +56,7 @@ function FilmCategoryAdmin() {
             formData.append("filmgif", filmgif)
             formData.append("allmoviegif", allmoviegif)
 
-            const res = await axios.put(`http://localhost:3000/filmcategory/${id}`, formData)
+            const res = await axios.put(`https://cinemagia-server.onrender.com/filmcategory/${id}`, formData)
             setseriesgif(null)
             setanimationgif(null)
             setfilmgif(null)
@@ -74,7 +74,7 @@ function FilmCategoryAdmin() {
 
     async function getGifData() {
         try {
-            const res = await axios.get("http://localhost:3000/filmcategory")
+            const res = await axios.get("https://cinemagia-server.onrender.com/filmcategory")
             setGif(res.data)
         } catch (error) {
             console.error("Error while fetching gif data:", error)

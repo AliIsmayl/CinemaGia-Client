@@ -35,13 +35,13 @@ function PersonalAdmin() {
     setopenForm(!openForm)
   }
   async function getPersonalData() {
-    const res = await axios.get("http://localhost:3000/personal")
+    const res = await axios.get("https://cinemagia-server.onrender.com/personal")
     setPersonal(res.data)
   }
 
   async function handleDelete(id, token) {
     try {
-        await axios.delete(`http://localhost:3000/personal/${id}`, {
+        await axios.delete(`https://cinemagia-server.onrender.com/personal/${id}`, {
             headers: {
                 Authorization: token
             }

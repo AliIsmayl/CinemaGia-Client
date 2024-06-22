@@ -16,7 +16,7 @@ function MovieAdd() {
 
     async function getReklamData() {
         try {
-            const res = await axios.get("http://localhost:3000/moviecart");
+            const res = await axios.get("https://cinemagia-server.onrender.com/moviecart");
             setMovie(res.data);
         } catch (error) {
             console.error('Error fetching movie data:', error);
@@ -102,7 +102,7 @@ function MovieAdd() {
                                 });
 
 
-                                axios.post("http://localhost:3000/moviecart", values, {
+                                axios.post("https://cinemagia-server.onrender.com/moviecart", values, {
                                     headers: {
                                         'Content-Type': 'multipart/form-data',
                                     },

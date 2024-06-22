@@ -12,7 +12,7 @@ function Header() {
 
 
   async function getHeaderData() {
-    const res = await axios.get("http://localhost:3000/header")
+    const res = await axios.get("https://cinemagia-server.onrender.com/header")
     setHeader(res.data)
   }
 

@@ -10,7 +10,7 @@ function InformSlide() {
   const [inform, setInform] = useState([])
 
   async function getInformData() {
-    const res = await axios.get("http://localhost:3000/aboutinformsection")
+    const res = await axios.get("https://cinemagia-server.onrender.com/aboutinformsection")
     setInform(res.data)
   }
 

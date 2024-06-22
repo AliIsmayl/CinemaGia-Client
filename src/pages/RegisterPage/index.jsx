@@ -40,7 +40,7 @@ function RegisterPage({ leftBox, setleftBox }) {
       return
     }
     try {
-      const res = await axios.post("http://localhost:3000/register", {
+      const res = await axios.post("https://cinemagia-server.onrender.com/register", {
         username: userName,
         password: password,
         email: email,
@@ -102,7 +102,7 @@ function RegisterPage({ leftBox, setleftBox }) {
   })}
   onSubmit={async (values, { setSubmitting, resetForm }) => {
     try {
-      const res = await axios.post("http://localhost:3000/register", values);
+      const res = await axios.post("https://cinemagia-server.onrender.com/register", values);
       const token = res.data;
       const decoded = jwtDecode(token);
       setUser(decoded);

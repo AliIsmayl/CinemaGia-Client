@@ -9,7 +9,7 @@ function PriceTypeProvider({ children }) {
   const { user } = useContext(userContext);
     
     async function getCurrentData() {
-        const res = await axios.get(`http://localhost:3000/users/${user._id}`)
+        const res = await axios.get(`https://cinemagia-server.onrender.com/users/${user._id}`)
         setcurrentUser(res.data)
     }
 

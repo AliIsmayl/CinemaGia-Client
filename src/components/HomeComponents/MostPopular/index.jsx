@@ -36,7 +36,7 @@ function MostPopular() {
 
   async function getMostPopular() {
     try {
-      const res = await axios.get("http://localhost:3000/moviecart");
+      const res = await axios.get("https://cinemagia-server.onrender.com/moviecart");
       const sortedPopularMovies = res.data.sort((a, b) => {
         const avgRatingA = a.moviepoint.reduce((total, item) => total + item.rating, -1) / a.moviepoint.length;
         const avgRatingB = b.moviepoint.reduce((total, item) => total + item.rating, -1) / b.moviepoint.length;

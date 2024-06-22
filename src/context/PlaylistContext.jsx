@@ -18,7 +18,7 @@ function PlaylistProvider({ children }) {
 
     async function handleAddPlaylist(id) {
         try {
-            const res = await axios.post(`http://localhost:3000/users/${user._id}/addWishlist`, {
+            const res = await axios.post(`https://cinemagia-server.onrender.com/users/${user._id}/addWishlist`, {
                 productId: id
             });
             if (res.status === 201) {
@@ -36,7 +36,7 @@ function PlaylistProvider({ children }) {
 
     async function handleDeletePlaylist(id) {
         try {
-            const res = await axios.post(`http://localhost:3000/users/${user._id}/deletewish`, {
+            const res = await axios.post(`https://cinemagia-server.onrender.com/users/${user._id}/deletewish`, {
                 productId: id
             });
             toast.error("Delete Movie");
@@ -49,7 +49,7 @@ function PlaylistProvider({ children }) {
 
     async function fetchAllPlaylist(id) {
             try {
-                const res = await axios(`http://localhost:3000/users/${user._id}/wishlist`);
+                const res = await axios(`https://cinemagia-server.onrender.com/users/${user._id}/wishlist`);
                 setPlaylist(res.data);
             } catch (error) {
                 console.error("Error fetching playlists:", error);

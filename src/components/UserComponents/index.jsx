@@ -23,13 +23,13 @@ function UserComponents() {
     }
 
     async function getHeaderData() {
-        const res = await axios.get("http://localhost:3000/users")
+        const res = await axios.get("https://cinemagia-server.onrender.com/users")
         setUser(res.data)
     }
 
     async function handleDelete(id, token) {
         try {
-            await axios.delete(`http://localhost:3000/users/${id}`, {
+            await axios.delete(`https://cinemagia-server.onrender.com/users/${id}`, {
                 headers: {
                     Authorization: token
                 }

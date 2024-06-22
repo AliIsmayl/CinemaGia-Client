@@ -34,7 +34,7 @@ function SeriesCartBox() {
     const [load, setload] = useState(true)
     async function getMovieCardData() {
         try {
-            const res = await axios.get('http://localhost:3000/moviecart');
+            const res = await axios.get('https://cinemagia-server.onrender.com/moviecart');
             setMovieCard(res.data);
             setload(false)
         } catch (error) {

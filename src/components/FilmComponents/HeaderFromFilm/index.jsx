@@ -9,7 +9,7 @@ const { t, i18n } = useTranslation();
 const [header, setHeader] = useState([])
 
   async function getHeaderData() {
-    const res = await axios.get("http://localhost:3000/headerandlogin")
+    const res = await axios.get("https://cinemagia-server.onrender.com/headerandlogin")
     setHeader(res.data)
   }
 

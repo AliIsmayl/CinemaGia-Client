@@ -6,7 +6,7 @@ function ReklamPoster() {
   const [reklam, setReklam] = useState([])
 
   async function getReklamData() {
-     const res=await axios.get("http://localhost:3000/reklam")
+     const res=await axios.get("https://cinemagia-server.onrender.com/reklam")
      setReklam(res.data)
    }
 

@@ -50,7 +50,7 @@ function LogInPage({ setloading, loading }) {
 
 
     try {
-      const res = await axios.post("http://localhost:3000/login", {
+      const res = await axios.post("https://cinemagia-server.onrender.com/login", {
         username: userName,
         password: password,
 
@@ -79,7 +79,7 @@ function LogInPage({ setloading, loading }) {
   }
   // ---------------------------------
   async function getLoginData() {
-    const res = await axios.get("http://localhost:3000/headerandlogin")
+    const res = await axios.get("https://cinemagia-server.onrender.com/headerandlogin")
     setLogin(res.data)
     setload(false)
 

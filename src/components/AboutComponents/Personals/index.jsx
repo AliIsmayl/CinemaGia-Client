@@ -7,7 +7,7 @@ function Personals() {
     const [personal, setPersonal] = useState([])
 
     async function getPersonalData() {
-       const res=await axios.get("http://localhost:3000/personal")
+       const res=await axios.get("https://cinemagia-server.onrender.com/personal")
        setPersonal(res.data)
      }
   

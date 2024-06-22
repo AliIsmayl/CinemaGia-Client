@@ -21,11 +21,11 @@ function PayNow({ Item }) {
 
     const payNow = async (token) => {
         try {
-            const res = await axios.put(`http://localhost:3000/${user._id}`, {
+            const res = await axios.put(`https://cinemagia-server.onrender.com/${user._id}`, {
                 movieType: Item.pricetype
             })
             const response = await axios({
-                url: "http://localhost:3000/payment",
+                url: "https://cinemagia-server.onrender.com/payment",
                 method: "post",
 
                 data: {

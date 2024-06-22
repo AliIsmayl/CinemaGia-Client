@@ -36,13 +36,13 @@ function InformAdmin() {
     }
 
     async function getInformData() {
-        const res = await axios.get("http://localhost:3000/aboutinformsection")
+        const res = await axios.get("https://cinemagia-server.onrender.com/aboutinformsection")
         setInform(res.data)
     }
 
     async function handleDelete(id, token) {
         try {
-            await axios.delete(`http://localhost:3000/aboutinformsection/${id}`, {
+            await axios.delete(`https://cinemagia-server.onrender.com/aboutinformsection/${id}`, {
                 headers: {
                     Authorization: token
                 }

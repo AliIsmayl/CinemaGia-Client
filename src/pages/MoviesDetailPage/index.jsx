@@ -44,7 +44,7 @@ function MoviesDetailPage({ setloading, loading }) {
 
   async function getMovieCard() {
     try {
-      const res = await axios.get(`http://localhost:3000/moviecart/${id}`);
+      const res = await axios.get(`https://cinemagia-server.onrender.com/moviecart/${id}`);
       setMovieCartDetail(res.data);
       setLoad(false);
     } catch (error) {

@@ -19,7 +19,7 @@ function PricePage({ setloading, loading }) {
   const { currentUser } = useContext(PriceTypeContext)
 
   async function getPriceData() {
-    const res = await axios.get("http://localhost:3000/price")
+    const res = await axios.get("https://cinemagia-server.onrender.com/price")
     setPrice(res.data)
   }
 

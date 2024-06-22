@@ -12,7 +12,7 @@ function Partner() {
 	const [partner, setPartner] = useState([])
 
 	async function getPartnerData() {
-		const res = await axios.get("http://localhost:3000/partner")
+		const res = await axios.get("https://cinemagia-server.onrender.com/partner")
 		setPartner(res.data)
 	}
 

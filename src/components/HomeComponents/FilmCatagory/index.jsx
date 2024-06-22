@@ -13,7 +13,7 @@ function FilmCatagory() {
     const [filmCategory, setFilmCategory] = useState([])
 
     async function getFilmCategoryData() {
-      const res = await axios.get("http://localhost:3000/filmcategory")
+      const res = await axios.get("https://cinemagia-server.onrender.com/filmcategory")
       setFilmCategory(res.data)
     }
   

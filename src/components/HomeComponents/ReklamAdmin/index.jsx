@@ -35,7 +35,7 @@ function ReklamAdmin() {
             formData.append("studio", studio)
             formData.append("directed", directed)
 
-            const res = await axios.put(`http://localhost:3000/reklam/${id}`,formData)
+            const res = await axios.put(`https://cinemagia-server.onrender.com/reklam/${id}`,formData)
             setImage(null)
         } catch (error) {
 
@@ -46,7 +46,7 @@ function ReklamAdmin() {
         setopenForm(!openForm)
     }
     async function getReklamData() {
-        const res = await axios.get("http://localhost:3000/reklam")
+        const res = await axios.get("https://cinemagia-server.onrender.com/reklam")
         setReklam(res.data)
     }
 

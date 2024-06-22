@@ -87,7 +87,7 @@ export default TimerLine;
 
 //   async function getTimeLineData() {
 //     try {
-//       const res = await axios.get("http://localhost:3000/timeline")
+//       const res = await axios.get("https://cinemagia-server.onrender.com/timeline")
 //       setTimeLine(res.data)
 //     } catch (error) {
 //       console.error("Zaman çizelgesi verisi alınamadı:", error);

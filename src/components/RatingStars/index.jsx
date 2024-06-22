@@ -30,7 +30,7 @@ const StarRating = ({ Film , GetMovieCard }) => {
       setSelectedStar(index);
     }
 
-    const res = await axios.put(`http://localhost:3000/rating/${user._id}`, {
+    const res = await axios.put(`https://cinemagia-server.onrender.com/rating/${user._id}`, {
       rating: rating,
       product: product
     });
